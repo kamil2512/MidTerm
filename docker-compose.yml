@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  myapp-prod:
+    image: nginx:latest
+    container_name: myapp-prod
+    ports:
+      - "9090:80"
+    volumes:
+      - .:/usr/share/nginx/html
+    networks:
+      - myapp-net
+ 
+
+networks:
+  myapp-net:
+    driver: bridge
